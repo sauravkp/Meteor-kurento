@@ -1,0 +1,91 @@
+  <head>
+<title>IInterview</title>
+</head>
+
+<body>
+	<header>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-collapse"></button>
+					<a class="navbar-brand" href=".">Meteor-Kurento </a>
+				</div>
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+				<li>{{> loginButtons align="right"}}</li>
+				</ul>	
+				</div>
+			</div>
+		</div>
+	</header>
+	{{#if currentUser}}
+	<div class="container">
+		
+		{{> Interviewee }}
+
+		
+	</div>
+
+	<footer>
+		<div class="foot-fixed-bottom">
+			<div class="container text-center">
+				<div class="row">&copy; 2015 Meteor-Kurento</div>
+				
+			</div>
+		</div>
+	</footer>
+{{/if}}
+</body>
+
+
+<template name="Interviewee">
+		<div class="row">
+			<div class="col-md-5">
+				
+				<div class='videos'>
+					<video id="videoInput" autoplay width="480px" height="360px"
+					poster="img/webrtc.png"></video>
+					<video id="videoOutput" autoplay width="480px" height="360px"
+					poster="img/webrtc.png"></video>
+				</div>
+			</div>
+
+			<div class="col-md-2">
+				<!--a id="start" href="#" class="btn btn-warning startInterview"
+					><span
+					class="glyphicon glyphicon-record"></span> Start</a><br /> <br /> <a
+					id="stop" href="#" class="btn btn-danger stopInterview"
+					><span
+					class="glyphicon glyphicon-stop"></span> Stop</a><br /> <br /> <a
+					id="play" href="#" class="btn btn-success playInterview"
+					><span
+					class="glyphicon glyphicon-play"></span> Play</a-->
+					<button id="start" class="btn btn-warning startInterview"
+					><span
+					class="glyphicon glyphicon-record"></span> Start</button><br /> <br /> <button
+					id="stop" class="btn btn-danger stopInterview"
+					><span
+					class="glyphicon glyphicon-stop"></span> Stop</button><br /> <br /> <button
+					id="play" class="btn btn-success playInterview"
+					><span
+					class="glyphicon glyphicon-play"></span> Play</button>
+			</div>
+			<div class="col-md-5">
+				<div id = "timer"><p> <span id="time"></span></p></div>
+				<!--h3>Remote stream</h3>
+				<video id="videoOutput" autoplay width="480px" height="360px"
+					poster="img/webrtc.png"></video-->
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<!--label class="control-label" for="console">Console</label>
+				<div id="console"></div-->
+					<p id="demo">Please click <b>Start</b> to view the question.</p>
+			</div>
+		</div>
+		</template>
+
+
