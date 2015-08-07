@@ -53,7 +53,7 @@ if (Meteor.isServer) {
   var kurento = Meteor.npmRequire("kurento-client");
   var client,pipeline,file_uri,endofstream = false,wendofstream;
 
-  var ws_uri = 'ws://192.168.78.30:8888/kurento';
+  var ws_uri = 'ws://127.0.0.1:8888/kurento';
 
   Alerts.remove({}); // remove all
 
